@@ -1,4 +1,4 @@
-//store the URL for the GeoJSON data
+//URL for the GeoJSON data
 let url = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson';
 
 // Add a Leaflet tile layer.
@@ -46,10 +46,10 @@ function styleInfo(feature) {
 
 //define a function to choose the fillColor of the earthquake based on earthquake depth
 function chooseColor(depth) {
-    if (depth <= 10) return "blue";
+    if (depth <= 10) return "coral";
     else if (depth > 10 & depth <= 25) return "orange";
-    else if (depth > 25 & depth <= 40) return "red";
-    else if (depth > 40 & depth <= 55) return "black";
+    else if (depth > 25 & depth <= 40) return "blue";
+    else if (depth > 40 & depth <= 55) return "lime";
     else if (depth > 55 & depth <= 70) return "yellow";
     else return "purple";
 };
@@ -74,11 +74,11 @@ d3.json(url).then(function (data) {
     }).addTo(earthquake_data); 
     earthquake_data.addTo(myMap);
 
-//this function pulls the tectonic plate data and draws a fuchsia line over the plates
+//this function pulls the tectonic plate data and draws a red line over the plates
     d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json").then(function (data) { //pulls tectonic data with d3.json
         L.geoJson(data, {
-//sets the line color to fuchsia
-            color: "fuchsia", 
+//sets the line color to red
+            color: "red", 
             weight: 3
 //add the tectonic data to the tectonic layergroup / overlay
         }).addTo(tectonics); 
