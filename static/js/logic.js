@@ -1,5 +1,5 @@
 //store the URL for the GeoJSON data
-const url = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson';
+let url = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson';
 
 // Add a Leaflet tile layer.
 let streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -7,7 +7,7 @@ let streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
 });
 
 // Create a Leaflet map object.
-var myMap = L.map("map", {
+let myMap = L.map("map", {
     center: [37.09, -95.71],
     zoom: 5,
     layers: [streets]
@@ -88,7 +88,7 @@ d3.json(url).then(function (data) {
 
 });
 //create legend, credit to this website for the structure: https://codepen.io/haakseth/pen/KQbjdO -- this structure is referenced in style.css
-var legend = L.control({ position: "bottomright" });
+let legend = L.control({ position: "bottomright" });
 legend.onAdd = function(myMap) {
     var div = L.DomUtil.create("div", "legend");
     div.innerHTML += "<h4>Depth Color Legend</h4>";
