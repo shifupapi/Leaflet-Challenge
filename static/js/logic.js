@@ -86,8 +86,7 @@ d3.json(url).then(function (data) {
 //create legend, credit to this website for the structure: https://codepen.io/haakseth/pen/KQbjdO -- this structure is referenced in style.css
 let legend = L.control({ position: "bottomright" });
 legend.onAdd = function(myMap) {
-    var div = L.DomUtil.create("div", "legend");
-    // div.innerHTML += "<h4>Depth Color Legend</h4>";
+    let div = L.DomUtil.create("div", "legend");
     div.innerHTML += '<i style="background: green"></i><span>(Depth < 10)</span><br>';
     div.innerHTML += '<i style="background: yellow"></i><span>(10 < Depth <= 30)</span><br>';
     div.innerHTML += '<i style="background: coral"></i><span>(30 < Depth <= 50)</span><br>';
