@@ -13,13 +13,6 @@ let myMap = L.map("map", {
     layers: [streets]
 });
 
-//  Create a basemaps object.
-//     let baseMaps = {
-//         "Satellite": satellite,
-    //     "Grayscale": grayscale,
-    //     "Outdoors": outdoors
-       
-    // }
 //define basemaps as the streetmap 
 let baseMaps = {
     "streets": streets
