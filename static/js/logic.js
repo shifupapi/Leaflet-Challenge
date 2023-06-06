@@ -36,6 +36,7 @@ L.control.layers(baseMaps, overlays).addTo(myMap);
 function styleInfo(feature) {
     return {
         color: chooseColor(feature.geometry.coordinates[2]),
+        radius: chooseRadius(feature.properties.mag)
     }
 };
 
@@ -83,6 +84,7 @@ d3.json(url).then(function (data) {
 
 
 });
+
 //create legend, credit to this website for the structure: https://codepen.io/haakseth/pen/KQbjdO -- this structure is referenced in style.css
 let legend = L.control({ position: "bottomright" });
 legend.onAdd = function(myMap) {
